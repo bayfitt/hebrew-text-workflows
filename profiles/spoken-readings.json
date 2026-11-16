@@ -1,0 +1,1406 @@
+{
+  "policy_version": "spoken-usage-v1",
+  "name": "Familiar spoken Hebrew abbreviations",
+  "description": "A contextual reading profile for vocalization, transliteration and familiar English name labels.",
+  "vocalization_note": "Niqqud records an editorial spoken profile. Patah is used for the familiar a sound of proper acronyms under the configured pronunciation mappings. This profile is distinct from source-printed marks.",
+  "context_note": "Entries are proposals for an exact occurrence review. Quote variants and prefixes are matched without changing the original transcription. A source numeral or quotation needs its own contextual classification.",
+  "entries": [
+    {
+      "written_form": "רמב״ם",
+      "decision": "retain",
+      "spoken_reading": "רַמְבַּ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rambam",
+      "english_aliases": [
+        "Maimonides",
+        "Moses Maimonides",
+        "Rabbeinu Moshe ben Maimon",
+        "Rabbi Moses ben Maimon",
+        "Rabbi Moshe ben Maimon",
+        "Rambam"
+      ]
+    },
+    {
+      "written_form": "רמב״ן",
+      "decision": "retain",
+      "spoken_reading": "רַמְבַּ״ן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ramban",
+      "english_aliases": [
+        "Nachmanides",
+        "Nahmanides",
+        "Rabbeinu Moshe ben Nachman",
+        "Rabbi Moses ben Nachman",
+        "Rabbi Moshe ben Nachman",
+        "Ramban"
+      ]
+    },
+    {
+      "written_form": "רש״י",
+      "decision": "retain",
+      "spoken_reading": "רַשִׁ״י",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rashi",
+      "english_aliases": [
+        "Rabbi Shlomo Yitzchaki",
+        "Rabbi Shlomo Yitzhaki",
+        "Rabbi Solomon Yitzchaki",
+        "Rashi"
+      ]
+    },
+    {
+      "written_form": "רשב״א",
+      "decision": "retain",
+      "spoken_reading": "רַשְׁבַּ״א",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rashba",
+      "english_aliases": [
+        "Rabbi Shlomo ben Aderes",
+        "Rabbi Shlomo ben Aderet",
+        "Rabbi Solomon ben Aderet",
+        "Rashba"
+      ]
+    },
+    {
+      "written_form": "רשב״ם",
+      "decision": "retain",
+      "spoken_reading": "רַשְׁבַּ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rashbam",
+      "english_aliases": [
+        "Rabbi Samuel ben Meir",
+        "Rabbi Shmuel ben Meir",
+        "Rashbam"
+      ]
+    },
+    {
+      "written_form": "ריטב״א",
+      "decision": "retain",
+      "spoken_reading": "רִיטְבַ״א",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ritva",
+      "english_aliases": [
+        "Rabbeinu Yom Tov ben Avraham",
+        "Rabbi Yom Tov ben Avraham",
+        "Ritba",
+        "Ritva"
+      ]
+    },
+    {
+      "written_form": "רמ״א",
+      "decision": "retain",
+      "spoken_reading": "רֶמַ״א",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The Rema/Rama vowel varies by community. This profile uses the familiar Rema reading.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rema",
+      "english_aliases": [
+        "Moses Isserles",
+        "Rabbi Moses Isserles",
+        "Rabbi Moshe Isserles",
+        "Rama",
+        "Rema"
+      ]
+    },
+    {
+      "written_form": "ר״ן",
+      "decision": "retain",
+      "spoken_reading": "רַ״ן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ran",
+      "english_aliases": [
+        "Rabbeinu Nisim",
+        "Rabbeinu Nissim",
+        "Rabbi Nissim",
+        "Ran"
+      ]
+    },
+    {
+      "written_form": "רי״ף",
+      "decision": "retain",
+      "spoken_reading": "רִי״ף",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rif",
+      "english_aliases": [
+        "Alfasi",
+        "Rabbi Isaac Alfasi",
+        "Rabbi Yitzchak Alfasi",
+        "Rif"
+      ]
+    },
+    {
+      "written_form": "רא״ש",
+      "decision": "retain",
+      "spoken_reading": "רֹא״שׁ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rosh",
+      "english_aliases": [
+        "Rabbeinu Asher ben Yechiel",
+        "Rabbeinu Asher ben Yehiel",
+        "Rabbi Asher ben Yechiel",
+        "Rosh"
+      ]
+    },
+    {
+      "written_form": "ראב״ד",
+      "decision": "retain",
+      "spoken_reading": "רַאֲבַ״ד",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Raavad",
+      "english_aliases": [
+        "Raabad",
+        "Raavad",
+        "Rabbi Abraham ben David",
+        "Rabbi Avraham ben David",
+        "Ravad"
+      ]
+    },
+    {
+      "written_form": "ראב״ן",
+      "decision": "retain",
+      "spoken_reading": "רַאֲבַ״ן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Raavan",
+      "english_aliases": [
+        "Raaban",
+        "Raavan",
+        "Rabbi Eliezer ben Natan",
+        "Rabbi Eliezer ben Nathan"
+      ]
+    },
+    {
+      "written_form": "רד״ק",
+      "decision": "retain",
+      "spoken_reading": "רַדַ״ק",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Radak",
+      "english_aliases": [
+        "Rabbi David Kimchi",
+        "Rabbi David Kimhi",
+        "Radak"
+      ]
+    },
+    {
+      "written_form": "רלב״ג",
+      "decision": "retain",
+      "spoken_reading": "רַלְבַּ״ג",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ralbag",
+      "english_aliases": [
+        "Gersonides",
+        "Rabbi Levi ben Gershom",
+        "Ralbag"
+      ]
+    },
+    {
+      "written_form": "ריב״ש",
+      "decision": "retain",
+      "spoken_reading": "רִיבַ״שׁ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rivash",
+      "english_aliases": [
+        "Rabbi Isaac ben Sheshet",
+        "Rabbi Yitzchak ben Sheshet",
+        "Ribash",
+        "Rivash"
+      ]
+    },
+    {
+      "written_form": "רדב״ז",
+      "decision": "retain",
+      "spoken_reading": "רַדְבַּ״ז",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Radbaz",
+      "english_aliases": [
+        "Rabbi David ben Zimra",
+        "Rabbi David ben Zimrah",
+        "Radbaz",
+        "Radvaz"
+      ]
+    },
+    {
+      "written_form": "רד״ל",
+      "decision": "retain",
+      "spoken_reading": "רַדַ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/Pirkei_DeRabbi_Eliezer.22.1?with=Radal+Commentary"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Radal",
+      "english_aliases": [
+        "Rabbi David Luria",
+        "Radal"
+      ]
+    },
+    {
+      "written_form": "רא״ם",
+      "decision": "retain",
+      "spoken_reading": "רְאֵ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Re'em",
+      "english_aliases": [
+        "Rabbi Elijah Mizrachi",
+        "Rabbi Eliyahu Mizrachi",
+        "Re'em",
+        "Reem"
+      ]
+    },
+    {
+      "written_form": "רס״ג",
+      "decision": "retain",
+      "spoken_reading": "רַסַ״ג",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rasag",
+      "english_aliases": [
+        "Rabbeinu Saadia Gaon",
+        "Rasag",
+        "Rav Saadia Gaon",
+        "Saadia Gaon"
+      ]
+    },
+    {
+      "written_form": "רמ״ך",
+      "decision": "retain",
+      "spoken_reading": "רַמַ״ךְ",
+      "evidence_urls": [
+        "https://www.daat.ac.il/daat/vl/unjust/unjust01.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ramakh",
+      "english_aliases": [
+        "Rabbeinu Moshe HaKohen of Lunel",
+        "Rabbi Moshe HaKohen of Lunel",
+        "Ramach",
+        "Ramakh"
+      ]
+    },
+    {
+      "written_form": "מבי״ט",
+      "decision": "retain",
+      "spoken_reading": "מַבִּי״ט",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/4134855/jewish/You-Will-Return-to-the-Lord-Your-G-d-The-Commandment-of-Teshuvah.htm"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Mabit",
+      "english_aliases": [
+        "Mabit",
+        "Rabbi Moses di Trani",
+        "Rabbi Moshe ben Yosef Trani",
+        "Rabbi Moshe di Trani"
+      ]
+    },
+    {
+      "written_form": "מלבי״ם",
+      "decision": "retain",
+      "spoken_reading": "מַלְבִּי״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Malbim",
+      "english_aliases": [
+        "Malbim",
+        "Rabbi Meir Leibush",
+        "Rabbi Meir Leibush ben Yechiel Michel"
+      ]
+    },
+    {
+      "written_form": "נצי״ב",
+      "decision": "retain",
+      "spoken_reading": "נְצִי״ב",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/6412071/jewish/Of-Matzahs-Majorities-and-Talmudic-Magnificence.htm"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Netziv",
+      "english_aliases": [
+        "Natziv",
+        "Netziv",
+        "Rabbi Naftali Tzvi Yehuda Berlin",
+        "Rabbi Naftali Zvi Yehuda Berlin"
+      ]
+    },
+    {
+      "written_form": "מהר״ם",
+      "decision": "retain",
+      "spoken_reading": "מַהַרַ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/topics/maharam-lublin?tab=sources",
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharam",
+      "english_aliases": [
+        "Maharam"
+      ]
+    },
+    {
+      "written_form": "מהר״ש",
+      "decision": "retain",
+      "spoken_reading": "מַהַרַ״שׁ",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/4063823/jewish/Chapter-16.htm"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharash",
+      "english_aliases": [
+        "Maharash"
+      ]
+    },
+    {
+      "written_form": "מהר״ל",
+      "decision": "retain",
+      "spoken_reading": "מַהַרַ״ל",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/4063823/jewish/Chapter-16.htm"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharal",
+      "english_aliases": [
+        "Maharal",
+        "Rabbi Judah Loew",
+        "Rabbi Yehuda Loew"
+      ]
+    },
+    {
+      "written_form": "מהרש״א",
+      "decision": "retain",
+      "spoken_reading": "מַהַרְשַׁ״א",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharsha",
+      "english_aliases": [
+        "Maharasha",
+        "Maharsha",
+        "Rabbi Samuel Eliezer Eidels",
+        "Rabbi Shmuel Eliezer Eidels"
+      ]
+    },
+    {
+      "written_form": "מהרש״ל",
+      "decision": "retain",
+      "spoken_reading": "מַהַרְשַׁ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharshal",
+      "english_aliases": [
+        "Maharshal",
+        "Rabbi Shlomo Luria",
+        "Rabbi Solomon Luria"
+      ]
+    },
+    {
+      "written_form": "מהרי״ל",
+      "decision": "retain",
+      "spoken_reading": "מַהַרִי״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The familiar acronym reading applies to multiple referents. Context identifies the person.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharil",
+      "english_aliases": [
+        "Maharil"
+      ]
+    },
+    {
+      "written_form": "מהר״י",
+      "decision": "retain",
+      "spoken_reading": "מַהַרִ״י",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The familiar honorific acronym reading applies to multiple referents. Context identifies the person.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Mahari",
+      "english_aliases": [
+        "Mahari"
+      ]
+    },
+    {
+      "written_form": "מהר״ץ",
+      "decision": "retain",
+      "spoken_reading": "מַהַרַ״ץ",
+      "evidence_urls": [
+        "https://www.sefaria.org/Annotations_of_Maharatz_Chajes_on_Mishneh_Torah%2C_Foreign_Worship_and_Customs_of_the_Nations"
+      ],
+      "reading_notes": "Maharatz is appropriate for the customary title Maharatz Chajes. Other referents require contextual review.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharatz",
+      "english_aliases": [
+        "Maharatz"
+      ]
+    },
+    {
+      "written_form": "מהריב״ל",
+      "decision": "retain",
+      "spoken_reading": "מַהַרִיבַ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/Rabbinic_Authority_I%2C_Part_I%3B_Rabbinic_Authority%3B_The_Vision%2C_Chapter_1%3B_Towards_Defining_the_Concept_of_Rabbinic_Authority%3B_A_Contemporary_Analysis.17?no_applink=1"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharival",
+      "english_aliases": [
+        "Maharival"
+      ]
+    },
+    {
+      "written_form": "מהריט״ץ",
+      "decision": "retain",
+      "spoken_reading": "מַהַרִיטַ״ץ",
+      "evidence_urls": [
+        "https://ohr.edu/8299"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharitatz",
+      "english_aliases": [
+        "Maharitatz"
+      ]
+    },
+    {
+      "written_form": "מהרז״ו",
+      "decision": "retain",
+      "spoken_reading": "מַהַרְז״וּ",
+      "evidence_urls": [
+        "https://www.sefaria.org/digitized-by-sefaria"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharzu",
+      "english_aliases": [
+        "Maharzu"
+      ]
+    },
+    {
+      "written_form": "מהרשד״ם",
+      "decision": "retain",
+      "spoken_reading": "מַהַרַשְׁדַ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/Responsa_Maharashdam?tab=contents"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharashdam",
+      "english_aliases": [
+        "Maharashdam",
+        "Maharshdam"
+      ]
+    },
+    {
+      "written_form": "מהרש״ם",
+      "decision": "retain",
+      "spoken_reading": "מַהַרְשַׁ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Maharsham",
+      "english_aliases": [
+        "Maharasham",
+        "Maharsham"
+      ]
+    },
+    {
+      "written_form": "רש״ש",
+      "decision": "retain",
+      "spoken_reading": "רַשַׁ״שׁ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rashash",
+      "english_aliases": [
+        "Rashash"
+      ]
+    },
+    {
+      "written_form": "גר״א",
+      "decision": "retain",
+      "spoken_reading": "גְּרַ״א",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Gra",
+      "english_aliases": [
+        "Gaon of Vilna",
+        "Gra",
+        "Vilna Gaon"
+      ]
+    },
+    {
+      "written_form": "אר״י",
+      "decision": "retain",
+      "spoken_reading": "אֲרִ״י",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ari",
+      "english_aliases": [
+        "Ari",
+        "Arizal",
+        "Rabbi Isaac Luria",
+        "Rabbi Yitzchak Luria"
+      ]
+    },
+    {
+      "written_form": "ראי״ה",
+      "decision": "retain",
+      "spoken_reading": "רַאיַ״ה",
+      "evidence_urls": [
+        "https://www.nli.org.il/he/books/NNL_ALEPH997012197358405171/NLI"
+      ],
+      "reading_notes": "Rayah and Re’iyah are documented name variants. This spoken profile uses Rayah. A following surname remains part of the source context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rayah",
+      "english_aliases": [
+        "Harayah",
+        "Ra'ayah",
+        "Rayah",
+        "Re'iyah"
+      ]
+    },
+    {
+      "written_form": "יעב״ץ",
+      "decision": "retain",
+      "spoken_reading": "יַעֲבֵ״ץ",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/2263399/jewish/What-Are-the-Six-Remembrances.htm"
+      ],
+      "reading_notes": "The familiar pronunciation can be reviewed independently of an unresolved bibliographic identity.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Yaavetz",
+      "english_aliases": [
+        "Ya'avetz",
+        "Yaavetz",
+        "Yavetz"
+      ]
+    },
+    {
+      "written_form": "ט״ז",
+      "decision": "retain",
+      "spoken_reading": "טַ״ז",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Use the spoken title or commentator name in context. A Hebrew numeral ט״ז remains a numeral.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Taz",
+      "english_aliases": [
+        "Taz",
+        "Turei Zahab",
+        "Turei Zahav",
+        "Turei Zahav author",
+        "Turei Zehav"
+      ]
+    },
+    {
+      "written_form": "ש״ך",
+      "decision": "retain",
+      "spoken_reading": "שַׁ״ךְ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Shach",
+      "english_aliases": [
+        "Shach",
+        "Shakh",
+        "Siftei Cohen",
+        "Siftei Kohain",
+        "Siftei Kohein",
+        "Siftei Kohen"
+      ]
+    },
+    {
+      "written_form": "ב״ח",
+      "decision": "retain",
+      "spoken_reading": "בַּ״ח",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Bach",
+      "english_aliases": [
+        "Bach",
+        "Bayis Chadash",
+        "Bayit Chadash",
+        "Bayit Hadash"
+      ]
+    },
+    {
+      "written_form": "סמ״ע",
+      "decision": "retain",
+      "spoken_reading": "סְמַ״ע",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Sema",
+      "english_aliases": [
+        "Meiras Einayim",
+        "Meirat Einayim",
+        "Sema",
+        "Sma"
+      ]
+    },
+    {
+      "written_form": "סמ״ג",
+      "decision": "retain",
+      "spoken_reading": "סְמַ״ג",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Semag",
+      "english_aliases": [
+        "Sefer Mitzvos Gadol",
+        "Sefer Mitzvot Gadol",
+        "Semag",
+        "Smag"
+      ]
+    },
+    {
+      "written_form": "בה״ג",
+      "decision": "retain",
+      "spoken_reading": "בַּהַ״ג",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Bahag",
+      "english_aliases": [
+        "Baal Halachot Gedolot",
+        "Bahag",
+        "Behag",
+        "Halachot Gedolot",
+        "Halakhot Gedolot"
+      ]
+    },
+    {
+      "written_form": "חז״ל",
+      "decision": "retain",
+      "spoken_reading": "חֲזַ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Chazal",
+      "english_aliases": [
+        "Chazal",
+        "Hazal",
+        "our Sages of blessed memory"
+      ]
+    },
+    {
+      "written_form": "רז״ל",
+      "decision": "retain",
+      "spoken_reading": "רַזַ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Razal",
+      "english_aliases": [
+        "Razal",
+        "our Rabbis of blessed memory"
+      ]
+    },
+    {
+      "written_form": "ש״ס",
+      "decision": "retain",
+      "spoken_reading": "שַׁ״ס",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Shas",
+      "english_aliases": [
+        "Shas",
+        "six orders of the Mishnah",
+        "six orders of the Talmud"
+      ]
+    },
+    {
+      "written_form": "תנ״ך",
+      "decision": "retain",
+      "spoken_reading": "תַּנַ״ךְ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Tanach",
+      "english_aliases": [
+        "Tanach",
+        "Tanak",
+        "Tanakh"
+      ]
+    },
+    {
+      "written_form": "אדמו״ר",
+      "decision": "retain",
+      "spoken_reading": "אַדְמוֹ״ר",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The conventional title is read Admor. Any following personal or dynastic title remains part of the source context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Admor",
+      "english_aliases": [
+        "Admor",
+        "our master our teacher and our rabbi"
+      ]
+    },
+    {
+      "written_form": "שליט״א",
+      "decision": "retain",
+      "spoken_reading": "שְׁלִיטַ״א",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/4159258/jewish/Distinctive-Customs-of-Elul-Rosh-HaShanah-the-Ten-Days-of-Penitence-and-Yom-Kippur.htm"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Shlita",
+      "english_aliases": [
+        "Shlita",
+        "may he live long and good days amen"
+      ]
+    },
+    {
+      "written_form": "זצ״ל",
+      "decision": "retain",
+      "spoken_reading": "זַצַ״ל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A familiar spoken acronym. Resolve its referent and any prefixes in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Zatzal",
+      "english_aliases": [
+        "Zatzal",
+        "of righteous and blessed memory"
+      ]
+    },
+    {
+      "written_form": "שו״ת",
+      "decision": "retain",
+      "spoken_reading": "שׁוּ״תּ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The familiar responsa abbreviation is pronounced Shut. This reading profile marks final tav for its customary stop sound.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "שו״תים",
+      "decision": "retain",
+      "spoken_reading": "שׁוּ״תִּים",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The familiar plural is pronounced Shutim.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "עכו״ם",
+      "decision": "retain",
+      "spoken_reading": "עַכּוּ״ם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The familiar spoken term is Akum. Its contextual meaning remains an English translation decision.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "שו״ע",
+      "decision": "expand",
+      "expansion": "שולחן ערוך",
+      "vocalized_expansion": "שׁוּלְחָן עָרוּךְ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Shulchan Aruch",
+      "english_aliases": [
+        "Shulchan Aroukh",
+        "Shulchan Aruch",
+        "Shulchan Arukh",
+        "Shulhan Arukh"
+      ]
+    },
+    {
+      "written_form": "תוס׳",
+      "decision": "expand",
+      "expansion": "תוספות",
+      "vocalized_expansion": "תּוֹסָפוֹת",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Tosafot",
+      "english_aliases": [
+        "Tosafos",
+        "Tosafot",
+        "Tosafoth"
+      ]
+    },
+    {
+      "written_form": "ב״י",
+      "decision": "expand",
+      "expansion": "בית יוסף",
+      "vocalized_expansion": "בֵּית יוֹסֵף",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Beit Yosef",
+      "english_aliases": [
+        "Beis Yosef",
+        "Beit Yosef",
+        "Beth Yosef"
+      ]
+    },
+    {
+      "written_form": "יש״ש",
+      "decision": "expand",
+      "expansion": "ים של שלמה",
+      "vocalized_expansion": "יָם שֶׁל שְׁלֹמֹה",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Yam Shel Shlomo",
+      "english_aliases": [
+        "Yam Shel Shelomo",
+        "Yam Shel Shlomo"
+      ]
+    },
+    {
+      "written_form": "ע״ח",
+      "decision": "expand",
+      "expansion": "עץ חיים",
+      "vocalized_expansion": "עֵץ חַיִּים",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Etz Chaim",
+      "english_aliases": [
+        "Eitz Chaim",
+        "Etz Chaim",
+        "Etz Hayyim"
+      ]
+    },
+    {
+      "written_form": "תו״ש",
+      "decision": "expand",
+      "expansion": "תורה שלמה",
+      "vocalized_expansion": "תּוֹרָה שְׁלֵמָה",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Torah Shelemah",
+      "english_aliases": [
+        "Torah Shelemah",
+        "Torah Shlemah"
+      ]
+    },
+    {
+      "written_form": "טוש״ע",
+      "decision": "expand",
+      "expansion": "טור ושולחן ערוך",
+      "vocalized_expansion": "טוּר וְשׁוּלְחָן עָרוּךְ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Tur and Shulchan Aruch",
+      "english_aliases": [
+        "Tur and Shulchan Aruch"
+      ]
+    },
+    {
+      "written_form": "כנה״ג",
+      "decision": "expand",
+      "expansion": "כנסת הגדולה",
+      "vocalized_expansion": "כְּנֶסֶת הַגְּדוֹלָה",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Knesset HaGedolah",
+      "english_aliases": [
+        "Kenesset HaGedolah",
+        "Knesset HaGedolah"
+      ]
+    },
+    {
+      "written_form": "כס״מ",
+      "decision": "expand",
+      "expansion": "כסף משנה",
+      "vocalized_expansion": "כֶּסֶף מִשְׁנֶה",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Kesef Mishneh",
+      "english_aliases": [
+        "Kesef Mishne",
+        "Kesef Mishneh",
+        "Kessef Mishneh"
+      ]
+    },
+    {
+      "written_form": "מנ״ח",
+      "decision": "expand",
+      "expansion": "מנחת חינוך",
+      "vocalized_expansion": "מִנְחַת חִינּוּךְ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Minchat Chinuch",
+      "english_aliases": [
+        "Minchas Chinuch",
+        "Minchat Chinuch",
+        "Minhat Hinukh"
+      ]
+    },
+    {
+      "written_form": "חת״ס",
+      "decision": "expand",
+      "expansion": "חתם סופר",
+      "vocalized_expansion": "חֲתַם סוֹפֵר",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Chatam Sofer",
+      "english_aliases": [
+        "Chasam Sofer",
+        "Chatam Sofer",
+        "Hatam Sofer"
+      ]
+    },
+    {
+      "written_form": "חזו״א",
+      "decision": "expand",
+      "expansion": "חזון איש",
+      "vocalized_expansion": "חֲזוֹן אִישׁ",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Chazon Ish",
+      "english_aliases": [
+        "Chazon Ish",
+        "Hazon Ish"
+      ]
+    },
+    {
+      "written_form": "פמ״ג",
+      "decision": "expand",
+      "expansion": "פרי מגדים",
+      "vocalized_expansion": "פְּרִי מְגָדִים",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Pri Megadim",
+      "english_aliases": [
+        "Peri Megadim",
+        "Pri Megadim"
+      ]
+    },
+    {
+      "written_form": "סהמ״צ",
+      "decision": "expand",
+      "expansion": "ספר המצוות",
+      "vocalized_expansion": "סֵפֶר הַמִּצְווֹת",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Sefer HaMitzvot",
+      "english_aliases": [
+        "Sefer HaMitzvos",
+        "Sefer HaMitzvot",
+        "Sefer Hamitzvot"
+      ]
+    },
+    {
+      "written_form": "בעש״ט",
+      "decision": "expand",
+      "expansion": "בעל שם טוב",
+      "vocalized_expansion": "בַּעַל שֵׁם טוֹב",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Baal Shem Tov",
+      "english_aliases": [
+        "Ba'al Shem Tov",
+        "Baal Shem Tov",
+        "Besht"
+      ]
+    },
+    {
+      "written_form": "ראב״ע",
+      "decision": "expand",
+      "expansion": "אבן עזרא",
+      "vocalized_expansion": "אִבְּן עֶזְרָא",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Ibn Ezra",
+      "english_aliases": [
+        "Abraham ibn Ezra",
+        "Ibn Ezra",
+        "Rabbi Abraham ibn Ezra",
+        "Rabbi Avraham ibn Ezra"
+      ]
+    },
+    {
+      "written_form": "אדה״ז",
+      "decision": "expand",
+      "expansion": "אדמור הזקן",
+      "vocalized_expansion": "אַדְמוֹר הַזָּקֵן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The conventional title is Admor HaZaken. The reading text uses the lexical title אדמור for phonetic clarity.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Admor HaZaken",
+      "english_aliases": [
+        "Admor HaZaken",
+        "Admor Hazaken",
+        "Alter Rebbe"
+      ]
+    },
+    {
+      "written_form": "רח״ו",
+      "decision": "expand",
+      "expansion": "רב חיים ויטאל",
+      "vocalized_expansion": "רַב חַיִּים וִיטַאל",
+      "evidence_urls": [
+        "https://www.chabad.org/library/article_cdo/aid/380611/jewish/Rabbi-Yosef-Joseph-Caro-The-Master.htm"
+      ],
+      "reading_notes": "Read the familiar personal name Rav Chaim Vital. An article in the source attaches naturally to רב.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rabbi Chaim Vital",
+      "english_aliases": [
+        "Rabbi Chaim Vital",
+        "Rabbi Haim Vital",
+        "Rabbi Hayyim Vital",
+        "Rav Chaim Vital"
+      ]
+    },
+    {
+      "written_form": "גרש״ז",
+      "decision": "expand",
+      "expansion": "גאון רבי שלמה זלמן",
+      "vocalized_expansion": "גָּאוֹן רַבִּי שְׁלֹמֹה זַלְמַן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the customary honorific and familiar personal names. A following surname remains in its source context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rabbi Shlomo Zalman",
+      "english_aliases": [
+        "Rabbi Shlomo Zalman",
+        "Rabbi Shlomo-Zalman",
+        "Rav Shlomo Zalman"
+      ]
+    },
+    {
+      "written_form": "רע״ק",
+      "decision": "expand",
+      "expansion": "רבי עקיבא",
+      "vocalized_expansion": "רַבִּי עֲקִיבָא",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rabbi Akiva",
+      "english_aliases": [
+        "Rabbi Akiba",
+        "Rabbi Akiva"
+      ]
+    },
+    {
+      "written_form": "רעק״א",
+      "decision": "expand",
+      "expansion": "רבי עקיבא איגר",
+      "vocalized_expansion": "רַבִּי עֲקִיבָא אֵיגֶר",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Rabbi Akiva Eiger",
+      "english_aliases": [
+        "Rabbi Akiba Eger",
+        "Rabbi Akiva Eiger",
+        "Rav Akiva Eiger"
+      ]
+    },
+    {
+      "written_form": "חו״מ",
+      "decision": "expand",
+      "expansion": "חושן משפט",
+      "vocalized_expansion": "חוֹשֶׁן מִשְׁפָּט",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Choshen Mishpat",
+      "english_aliases": [
+        "Choshen Mishpat",
+        "Hoshen Mishpat"
+      ]
+    },
+    {
+      "written_form": "או״ח",
+      "decision": "expand",
+      "expansion": "אורח חיים",
+      "vocalized_expansion": "אוֹרַח חַיִּים",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Orach Chaim",
+      "english_aliases": [
+        "Orach Chaim",
+        "Orach Hayim",
+        "Orah Hayyim"
+      ]
+    },
+    {
+      "written_form": "יו״ד",
+      "decision": "expand",
+      "expansion": "יורה דעה",
+      "vocalized_expansion": "יוֹרֶה דֵעָה",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile",
+      "english_label": "Yoreh Deah",
+      "english_aliases": [
+        "Yore Deah",
+        "Yoreh De'ah",
+        "Yoreh Deah"
+      ]
+    },
+    {
+      "written_form": "אע״פ",
+      "decision": "expand",
+      "expansion": "אף על פי",
+      "vocalized_expansion": "אַף עַל פִּי",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A concessive phrase. Any attached prefix must be reviewed in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "אע״ג",
+      "decision": "expand",
+      "expansion": "אף על גב",
+      "vocalized_expansion": "אַף עַל גַּב",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "אעפ״כ",
+      "decision": "expand",
+      "expansion": "אף על פי כן",
+      "vocalized_expansion": "אַף עַל פִּי כֵן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "ד״ה",
+      "decision": "expand",
+      "expansion": "דיבור המתחיל",
+      "vocalized_expansion": "דִּיבּוּר הַמַּתְחִיל",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "ע״י",
+      "decision": "expand",
+      "expansion": "על ידי",
+      "vocalized_expansion": "עַל יְדֵי",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "ע״ש",
+      "decision": "expand",
+      "expansion": "עיין שם",
+      "vocalized_expansion": "עַיֵּין שָׁם",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "A bibliographic instruction. In other contexts ע״ש may mean על שם.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "ס״ק",
+      "decision": "expand",
+      "expansion": "סעיף קטן",
+      "vocalized_expansion": "סְעִיף קָטָן",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "Read the conventional phrase or title in context.",
+      "vocalization_kind": "editorial_spoken_profile"
+    },
+    {
+      "written_form": "כמ״ש",
+      "decision": "expand",
+      "expansion": "כמו שכתוב",
+      "vocalized_expansion": "כְּמוֹ שֶׁכָּתוּב",
+      "evidence_urls": [
+        "https://www.sefaria.org/static/files/Sefaria-Text-Map-June-2016.pdf"
+      ],
+      "reading_notes": "The tense and referent depend on the source sentence.",
+      "vocalization_kind": "editorial_spoken_profile"
+    }
+  ]
+}

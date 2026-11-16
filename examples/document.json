@@ -1,0 +1,17 @@
+{
+  "input_pdf": "../inputs/document.pdf",
+  "canonical_records": "../work/document/canonical.jsonl",
+  "output": "../work/document",
+  "pdf": {
+    "pages": "all",
+    "layout": "single",
+    "language": "heb"
+  },
+  "max_source_chars": 350,
+  "dictionary": "../profiles/spoken-readings.json",
+  "schema": "../profiles/charles-schema.json",
+  "reading_decisions": "../work/document/reading-decisions.jsonl",
+  "sheet_metadata": "../work/document/sheet-metadata.json",
+  "english_snapshot": "../work/document/english-snapshot.jsonl",
+  "english_name_decisions": "../work/document/english-name-decisions.jsonl"
+}

@@ -1,0 +1,14 @@
+work/
+private/
+inputs/
+outputs/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.db
+*.db-*
+*.sqlite*
+*.pem
+*.key

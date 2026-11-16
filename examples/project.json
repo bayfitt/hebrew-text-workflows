@@ -1,0 +1,10 @@
+{
+  "input": "../fixtures/records.jsonl",
+  "comparison": "../fixtures/secondary-ocr.jsonl",
+  "decisions": "../fixtures/reading-decisions.jsonl",
+  "english_decisions": "../fixtures/english-name-decisions.jsonl",
+  "dictionary": "../profiles/spoken-readings.json",
+  "schema": "../profiles/charles-schema.json",
+  "sheet_metadata": "../fixtures/sheet-metadata.json",
+  "output": "../work/demo"
+}

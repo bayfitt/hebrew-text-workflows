@@ -1,0 +1,28 @@
+{
+  "sheets": [
+    {
+      "properties": {
+        "title": "Book",
+        "sheetId": 1
+      }
+    },
+    {
+      "properties": {
+        "title": "Hebrew Review",
+        "sheetId": 2
+      }
+    },
+    {
+      "properties": {
+        "title": "Source & Review",
+        "sheetId": 3
+      }
+    },
+    {
+      "properties": {
+        "title": "Schema",
+        "sheetId": 4
+      }
+    }
+  ]
+}

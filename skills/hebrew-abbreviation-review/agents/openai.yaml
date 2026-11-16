@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spoken Hebrew Abbreviation Review"
+  short_description: "Review customary spoken Hebrew abbreviation readings"
+  default_prompt: "Use $hebrew-abbreviation-review during vocalization to choose customary spoken forms, preserve source text and flag doubtful readings."
