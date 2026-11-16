@@ -209,6 +209,15 @@ class SourceAndLayoutTests(unittest.TestCase):
         self.assertIn('Schema!B2', guard)
         self.assertEqual(result['print_profile']['visible_columns'], 3)
         self.assertFalse(result['oversized_rows'])
+        directions = [request['repeatCell'] for request in result['layout']['requests']
+                      if 'repeatCell' in request and
+                      'textDirection' in request['repeatCell']['cell'].get('userEnteredFormat', {})]
+        self.assertTrue(any(item['range'] == {'sheetId': 1, 'startColumnIndex': 0, 'endColumnIndex': 1}
+                            and item['cell']['userEnteredFormat']['textDirection'] == 'RIGHT_TO_LEFT'
+                            for item in directions))
+        self.assertTrue(any(item['range'] == {'sheetId': 2, 'startColumnIndex': 3, 'endColumnIndex': 4}
+                            and item['cell']['userEnteredFormat']['horizontalAlignment'] == 'LEFT'
+                            for item in directions))
 
     def test_blank_template_is_legal_landscape_with_hidden_literal_column(self):
         with tempfile.TemporaryDirectory() as directory:

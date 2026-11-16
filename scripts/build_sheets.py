@@ -93,6 +93,15 @@ def build(records, sheet_ids, policy_version, dictionary_hash, batch_size=50):
                             'cell': {'userEnteredFormat': {'backgroundColor': {'red': .75, 'green': .88, 'blue': .82},
                                                           'textFormat': {'bold': True}}},
                             'fields': 'userEnteredFormat.backgroundColor,userEnteredFormat.textFormat.bold'}}])
+    for sid, start, end, direction, alignment in [
+            (book_id, 0, 1, 'RIGHT_TO_LEFT', 'RIGHT'),
+            (book_id, 1, 3, 'LEFT_TO_RIGHT', 'LEFT'),
+            (review_id, 0, 3, 'RIGHT_TO_LEFT', 'RIGHT'),
+            (review_id, 3, 4, 'LEFT_TO_RIGHT', 'LEFT')]:
+        layout.append({'repeatCell': {
+            'range': {'sheetId': sid, 'startColumnIndex': start, 'endColumnIndex': end},
+            'cell': {'userEnteredFormat': {'textDirection': direction, 'horizontalAlignment': alignment}},
+            'fields': 'userEnteredFormat.textDirection,userEnteredFormat.horizontalAlignment'}})
     layout.append({'updateDimensionProperties': {
         'range': {'sheetId': review_id, 'dimension': 'COLUMNS', 'startIndex': 0, 'endIndex': 1},
         'properties': {'hiddenByUser': True}, 'fields': 'hiddenByUser'}})
