@@ -23,3 +23,18 @@ The JSON object has a `title`, `schema_version: 1`, a `passages` array with uniq
 Body columns are physically Hebrew on the left (text reads RTL), romanization in the center, English on the right. Landscape US Legal is 14 × 8.5 in. The title/contents page is page 1; spreads are physical even-left/odd-right and notes from both pages appear on the odd page. Spread notes are custom numbered apparatus, not native individual-page footnotes. Widths are selected from a bounded set using TeX's measured heights, consistent gutters and a visual-jitter penalty. `--mode fixed` gives a comparison with the same sizes and source. The generated PDF, page layout JSON and logs go under the specified output directory. Never edit generated TeX or PDF to change source text.
 
 The allocator keeps each passage rectangular and intact; if one cannot fit, manually identify matching subparagraph boundaries in all three columns, retain parent/child IDs, and rerun. An empty last right-side body can be intentional; it still carries any notes from the left page. This is for proofs, not printer-approved PDF/X. Print representative pages duplex at 100% to check binding, margins, outside folios, niqqud, punctuation direction, notes and density. Reflow-test any text or font change. This version is an excerpt-oriented tool; benchmark and proof a full edition before production.
+
+## Build the public *Milchamot Hashem* example
+
+This uses four rows from Rabbi Yiḥya Qappach's author preface, in the published Hebrew reading edition and transliteration. The English column contains only a disclosure that English was not supplied; it is intentionally not a translation. For a genuine trilingual mechanical smoke-test use the independently written `example.json` instead.
+
+```sh
+git clone https://github.com/bayfitt/milchamot-hashem.git work/milchamot-hashem-public
+git -C work/milchamot-hashem-public checkout --detach 97b2b1085bfe01091b9c00115955bd32231812c7
+python3 typeset/prepare_milchamot_example.py \
+  --from-reading-edition work/milchamot-hashem-public/reading-hebrew.jsonl \
+  --out work/milchamot-hashem-example.json
+python3 typeset/build.py --input work/milchamot-hashem-example.json --out work/milchamot-hashem-proof
+```
+
+The importer verifies the exact SHA-256 of the released reading file. Source text is not vendored. The renderer writes the credit, license, pinned revision and change notice to the cover. The generated excerpt and adaptations are [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Credit Rabbi Yiḥya Qappach, Hebrew Wikisource contributors (via Sefaria's ויקיטקסט Hebrew version), and the downstream reading-edition editors; see the [pinned provenance and attribution](https://github.com/bayfitt/milchamot-hashem/blob/97b2b1085bfe01091b9c00115955bd32231812c7/PROVENANCE.md) and [content license](https://github.com/bayfitt/milchamot-hashem/blob/97b2b1085bfe01091b9c00115955bd32231812c7/LICENSE-CONTENT.txt). The scripts and TeX template remain [MIT-licensed](../LICENSE); fonts retain their own licenses. For your own example, optional `publication_notice` is an array of plain-text lines printed on the cover.

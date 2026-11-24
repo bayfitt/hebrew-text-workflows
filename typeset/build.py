@@ -115,7 +115,8 @@ def pages(layout):
 
 if not shutil.which("lualatex"):sys.exit("Install LuaLaTeX before building")
 title=cfg["title"]
-write("title.tex",[r"\newcommand{\BookTitle}{"+mixed(title)+"}"])
+write("title.tex",[r"\newcommand{\BookTitle}{"+mixed(title)+"}"]+
+ [r"\newcommand{\PublicationNotice}{"+r"\par ".join(mixed(line) for line in cfg.get("publication_notice",[]))+"}"])
 if cfgpath.require_tnr:
  write("font-policy.tex",[r"\def\RequireTimesNewRoman{1}"])
 else:
