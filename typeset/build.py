@@ -61,8 +61,8 @@ def metrics(log):
  assert len(m)==len(idx)*len(widths) and len(n)==sum(k in notes for k in idx)
  return m,n,cap
 def plan(m,n,cap,fixed=False):
- # The 46pt page header + 12pt conservative bottom buffer are outside body.
- cap-=58
+ # The 12pt conservative bottom buffer are outside body.
+ cap-=12
  allowed=[0] if fixed else list(range(len(widths)))
  ans=[]
  for gi,g in enumerate(groups):
@@ -103,7 +103,7 @@ def pages(layout):
    toc.append(esc(names[gi])+r'\dotfill '+str(2*i)+r'\par')
    seen.add(gi)
   for side,rows,w in [('Left',L,a),('Right',R,b)]:
-   cmd.append(r'\ProofHead'+args(esc(names[gi]),f'Spread {i} / {side}',esc(f'Width ratio {widths[w][0]:.0%} / {widths[w][1]:.0%} / {widths[w][2]:.0%}')))
+   cmd.append(r'\renewcommand{\PageFooter}'+args(mixed(chapters[gi].get("footer_label",""))))
    for k in rows:
     r=idx[k]; lab=esc(r['id'])+(r'\textsuperscript{'+str(k)+r'}' if k in notes else '')
     cmd.append(r'\ProofRow'+args(*widths[w],lab,*data(r)))

@@ -31,7 +31,7 @@ rows = [
 data = {
     "schema_version": 1,
     "title": "Milchamot Hashem",
-    "chapters": [{"label": "Author's preface (public excerpt)", "first_id": rows[0]["id"]}],
+    "chapters": [{"label": "Author's preface (public excerpt)", "first_id": rows[0]["id"], "footer_label": "Author’s Preface"}],
     "passages": rows,
     "publication_notice": NOTICE,
 }
