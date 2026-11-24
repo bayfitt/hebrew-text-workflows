@@ -111,3 +111,9 @@ Public files comprise workflow code, generic profiles, review instructions and i
 Before publication, run the public-tree check. An optional local `--private-records` input checks for long overlapping Hebrew sequences while keeping the comparison input outside the repository. After the initial commit, `--history` checks every reachable source blob as well.
 
 This workflow code uses the MIT license. Charles Loder's copyright and MIT notice are retained in scripts/transliterate_LICENSE.md. [MIT license](https://opensource.org/license/mit)
+
+## LuaLaTeX print proofs
+
+Use the [trilingual print proof workflow](typeset/README.md) to turn an ordered, reviewed JSON snapshot into a landscape Legal PDF with synchronized Hebrew, romanization and English.
+
+The [Milchamot Hashem project](https://github.com/bayfitt/milchamot-hashem) links to this reusable workflow. Its manuscript and working proof are not bundled here.

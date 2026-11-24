@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "title": "A Small Garden",
+  "chapters": [{"first_id": "garden.1", "label": "Morning"}],
+  "passages": [
+    {"id": "garden.1", "he": "בַּבֹּקֶר הַקָּרוֹב נִפְתַּח אֶת הַשַּׁעַר.", "roman": "Babboqer haqqarov niftaḥ et hashshaʿar.", "en": "Tomorrow morning we will open the gate.", "note": "Note from the left page."},
+    {"id": "garden.2", "he": "אַחַר כָּךְ נַשְׁקֶה אֶת הָעֵצִים בַּגִּנָּה.", "roman": "Aḥar kakh nashqeh et haʿeṣim bagginnah.", "en": "Then we will water the trees in the garden.", "note": "Note from the right page, with pointed Hebrew: גִּנָּה."}
+  ]
+}
