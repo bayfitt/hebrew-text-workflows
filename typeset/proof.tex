@@ -1,0 +1,58 @@
+\documentclass[10pt,twoside,legalpaper,landscape]{article}
+\usepackage[inner=0.90in,outer=0.43in,top=0.40in,bottom=0.49in,footskip=.28in]{geometry}
+\usepackage{fontspec}
+\input{font-policy.tex}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}[Renderer=HarfBuzz]\newcommand{\latinlabel}{Times New Roman}}{\ifdefined\RequireTimesNewRoman\PackageError{book}{Times New Roman is unavailable}{Install a licensed copy or omit --require-tnr for a prototype}\fi\setmainfont{Liberation Serif}[Renderer=HarfBuzz]\newcommand{\latinlabel}{Liberation Serif (temporary Times New Roman stand-in)}}
+\usepackage[bidi=basic,english]{babel}
+\babelprovide[import]{hebrew}
+\directlua{luaotfload.add_fallback("hepunct",{"Noto Sans:mode=harf;"})}
+\babelfont[hebrew]{rm}[Renderer=HarfBuzz,RawFeature={fallback=hepunct}]{Noto Sans Hebrew}
+\usepackage{xcolor,fancyhdr}
+\definecolor{ink}{HTML}{000000}
+\definecolor{accent}{HTML}{000000}
+\color{ink}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=1em
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[LE,RO]{\small\thepage}
+\newcommand{\PageFooter}{}
+\fancyfoot[C]{\small\PageFooter}
+\renewcommand{\headrulewidth}{0pt}
+\raggedbottom
+\newlength{\fixedgutter}\setlength{\fixedgutter}{.25in}
+\newlength{\columnspace}\setlength{\columnspace}{\dimexpr\textwidth-2\fixedgutter}
+\newsavebox{\colA}\newsavebox{\colB}\newsavebox{\colC}\newsavebox{\noteBox}
+\newcommand{\SaveText}[4]{\savebox{#1}{\begin{minipage}[t]{#2}\vspace{0pt}#3#4\par\end{minipage}}}
+\newcommand{\HebrewBody}[1]{\begin{otherlanguage}{hebrew}\raggedleft\fontsize{11.2}{16}\selectfont #1\par\end{otherlanguage}}
+\newcommand{\RomanBody}[1]{{\raggedright\fontsize{9.4}{13.2}\selectfont\upshape #1\par}}
+\newcommand{\EnglishBody}[1]{{\raggedright\fontsize{10.25}{14.2}\selectfont\upshape #1\par}}
+\newcommand{\NoteBody}[1]{{\raggedright\fontsize{8.5}{11}\selectfont\upshape #1\par}}
+\newcommand{\SetCols}[6]{\SaveText{\colA}{#1\columnspace}{\relax}{\HebrewBody{#4}}\SaveText{\colB}{#2\columnspace}{\relax}{\RomanBody{#5}}\SaveText{\colC}{#3\columnspace}{\relax}{\EnglishBody{#6}}}
+\newcommand{\BoxHeight}[1]{\number\dimexpr\ht#1+\dp#1\relax}
+\newcommand{\Measure}[8]{\SetCols{#3}{#4}{#5}{#6}{#7}{#8}\typeout{METRIC|#1|#2|\BoxHeight{\colA}|\BoxHeight{\colB}|\BoxHeight{\colC}}}
+\newcommand{\MeasureNote}[2]{\SaveText{\noteBox}{\textwidth}{\relax}{\NoteBody{#2}}\typeout{NOTE|#1|\BoxHeight{\noteBox}}}
+\newcommand{\ProofRow}[7]{\SetCols{#1}{#2}{#3}{#5}{#6}{#7}\nointerlineskip\vbox{\fontsize{7.6}{9}\selectfont\color{accent}#4\par\vskip3pt\nointerlineskip
+\hbox to \textwidth{\usebox{\colA}\hskip\fixedgutter\usebox{\colB}\hskip\fixedgutter\usebox{\colC}\hss}}\nointerlineskip\vskip5pt}
+\newcommand{\ProofNotes}[1]{\vfill\nointerlineskip\hrule\vskip7pt{\fontsize{9}{11}\selectfont\color{accent}Notes to this spread\par}\vskip5pt\nointerlineskip\NoteBody{#1}}
+\newcommand{\FontSample}[2]{\nointerlineskip\vbox{\color{accent}#1\par\begin{otherlanguage}{hebrew}\fontspec[Renderer=HarfBuzz,RawFeature={fallback=hepunct}]{#1}\fontsize{19}{26}\selectfont\raggedleft #2\par\end{otherlanguage}}\vskip12pt}
+\input{title.tex}
+\begin{document}
+\ifdefined\DoMeasure
+  \typeout{CAPACITY|\number\textheight}
+  \input{measure.tex}
+\else
+  \thispagestyle{empty}\vspace*{1.05in}
+  {\color{accent}\large Private landscape layout proof\par}\vspace{.20in}
+  {\fontsize{48}{52}\selectfont \BookTitle\par}\vspace{.15in}
+  \vspace{.35in}{\large Landscape US Legal, 14 × 8.5 in\par}
+  \vspace{.10in}{\latinlabel\par}
+  \vspace{.25in}Three synchronized columns. Facing-page notes appear only on the right page. Selected excerpts, not a publication copy.\par
+  \vspace{.23in}{\color{accent}\large Contents of this proof\par}\vspace{.1in}
+  \input{contents.tex}
+  \vspace{.18in}{\small\PublicationNotice\par}
+  \clearpage
+  \input{pages.tex}
+\fi
+\end{document}

@@ -9,7 +9,7 @@ import unicodedata
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DIRECTORIES = {'scripts', 'tests', 'skills', 'profiles', 'fixtures', 'examples'}
+DIRECTORIES = {'scripts', 'tests', 'skills', 'profiles', 'fixtures', 'examples', 'typeset'}
 ROOT_FILES = {'README.md', 'LICENSE', '.gitignore'}
 EXTENSIONS = {'.py', '.mjs', '.gs', '.md', '.json', '.jsonl', '.yaml', '.yml', '.txt'}
 PATTERNS = [re.compile(rb'AIza[0-9A-Za-z_-]{30,}'),
@@ -39,7 +39,7 @@ def check_blob(name, data, private_windows):
     relative = Path(name)
     if relative.parts[0] not in DIRECTORIES and name not in ROOT_FILES:
         raise ValueError(f'Unapproved public path {name}')
-    if name not in ROOT_FILES and relative.suffix not in EXTENSIONS:
+    if name not in ROOT_FILES and name not in {'typeset/smoke-test.sh', 'typeset/debian-13.lock', 'typeset/proof.tex'} and relative.suffix not in EXTENSIONS:
         raise ValueError(f'Unapproved public file type {name}')
     if len(data) > 5_000_000:
         raise ValueError(f'Unexpected large public source file {name}')
