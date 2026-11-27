@@ -20,22 +20,28 @@ private paths. Pass JSON arrays or JSONL for row data.
    `source_revision`. Run `plan --manifest MANIFEST --source SOURCE --output PLAN`.
    An unchanged reference keeps its stable ID when rows move; any source edit
    invalidates later checkpoints through the source hash.
-2. **Native Google Translate.** In a staging tab with headers on row 1, write
-   ID in A, exact Hebrew in B, and the planned native Google formula in C.
-   Use formula-capable input for C, not text. Wait for calculation; the
-   connector must read the formula (e.g. Sheets `userEnteredValue.formulaValue`)
-   and the corresponding effective value. Normalize each result to
+2. **Source-first English (default).** Translate from the Hebrew in context.
+   Fix wrong meanings before higher-order style, preserve the author's
+   argumentative pace, and record the editorial rationale separately. Supply
+   decisions with `{id,source_sha256,english,english_note}`, then run
+   `english --input PLAN --edits EDITS --output ENGLISH`. The default plan
+   has no Google formula, calls no Google service, and needs no Google cells
+   or payloads. Do not relabel historical editorial drafts as Google data.
+3. **Optional native Google comparison.** Set the private manifest's
+   `translation_mode` to `google-comparison` explicitly before planning.
+   Complete independent English first. In a staging tab with headers on
+   row 1, write ID in A, exact Hebrew in B, and the planned native Google
+   formula in C. Read back the live formula and its effective value as
    `{id,source_sha256,source_text,formula,value,error}`; put Sheets
-   `effectiveValue.errorValue` in `error` when present. Then paste values
-   only in a separate frozen range/tab and **read back** the frozen cell:
-   `{id,source_sha256,source_text,formula:null,value}`. No formula in the
-   frozen cell. Do not fill missing Google data with editorial English.
-3. **English review.** Read the Hebrew in context; fix wrong meanings before
-   higher-order style, preserve the author's argumentative pace, and record
-   the editorial rationale separately. Supply decisions with
-   `{id,source_sha256,google_sha256,english,english_note}`; the Google hash
-   is SHA-256 of its exact UTF-8 value. Run
-   `english --input PLAN --live LIVE --frozen FROZEN --edits EDITS --output ENGLISH`.
+   `effectiveValue.errorValue` in `error` when present. Paste values only
+   in a separate range/tab and read them back as
+   `{id,source_sha256,source_text,formula:null,value}`. Supply comparison
+   notes with `{id,source_sha256,english_sha256,google_sha256,google_comparison_note}`;
+   the two review hashes pin the exact respective UTF-8 strings. Run
+   `compare-google --input ENGLISH --live LIVE --frozen FROZEN --notes NOTES --output COMPARED`.
+   Use COMPARED for the next stage in this mode. This checkpoint records
+   the Google output and a comparison note but cannot replace the already
+   reviewed English. Preserve older snapshots as they are.
 4. **Contextual niqqud.** After the English checkpoint, read the Hebrew
    independently, consult the chosen English to cross-check readings, and
    supply `{id,source_sha256,english_sha256,vocalized_text,niqqud_note}`.

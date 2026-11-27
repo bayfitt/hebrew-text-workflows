@@ -12,7 +12,8 @@ from book_workflow import digest, pin
 from workflow_io import read_records
 
 
-def test_synthetic_book_cli(tmp_path):
+@pytest.mark.parametrize('google', [False, True])
+def test_synthetic_book_cli(tmp_path, google):
     def put(name, obj):
         path = tmp_path / name
         path.write_text(json.dumps(obj, ensure_ascii=False))
@@ -31,20 +32,34 @@ def test_synthetic_book_cli(tmp_path):
     source = put('source.json', source_rows)
     assert run('pin-source', source=source).strip() == pin(source_rows)
     manifest = put('manifest.json', {'book_id': 'synthetic', 'source_edition': 'fixture',
-                                    'source_revision': 'r1', 'source_sha256': pin(source_rows)})
+                                    'source_revision': 'r1', 'source_sha256': pin(source_rows),
+                                    **({'translation_mode': 'google-comparison'} if google else {})})
     plan = tmp_path / 'plan.jsonl'
     run('plan', manifest=manifest, source=source, output=plan)
     row, = read_records(plan)
     key = {k: row[k] for k in ('id','source_sha256')}
     engine_out = 'There name'
     observed = {**key, 'source_text': row['source_text'], 'value': engine_out}
-    live = put('live.json', [{**observed, 'formula': row['google_formula']}])
-    frozen = put('frozen.json', [observed])
-    edits = put('edits.json', [{**key, 'google_sha256': digest(engine_out),
-                               'english': 'There, a name.', 'english_note': 'Retain both senses.'}])
+    edits = put('edits.json', [{**key, 'english': 'There, a name.', 'english_note': 'Retain both senses.'}])
     en = tmp_path / 'en.jsonl'
-    run('english', input=plan, live=live, frozen=live, edits=edits, output=en, fails=True)
-    run('english', input=plan, live=live, frozen=frozen, edits=edits, output=en)
+    run('english', input=plan, edits=edits, output=en)
+    assert 'google_translate' not in read_records(en)[0]
+    if google:
+        live = put('live.json', [{**observed, 'formula': row['google_formula']}])
+        frozen = put('frozen.json', [observed])
+        notes = put('notes.json', [{**key, 'google_sha256': digest(engine_out),
+                                  'english_sha256': digest('There, a name.'),
+                                  'google_comparison_note': 'Punctuation changed.',
+                                  'english': 'Attempted overwrite'}])
+        compared = tmp_path / 'compared.jsonl'
+        run('compare-google', input=en, live=live, frozen=live, notes=notes, output=compared, fails=True)
+        run('compare-google', input=en, live=live, frozen=frozen, notes=notes, output=compared)
+        en = compared
+    else:
+        assert 'google_formula' not in row
+        empty = put('no-readback.json', [])
+        run('compare-google', input=en, live=empty, frozen=empty, notes=empty,
+            output=tmp_path / 'not-compared.jsonl', fails=True)
     drafts = put('drafts.json', [{**key, 'vocalized_text': 'שָׁם שָׁם', 'niqqud_note': 'Check homographs.',
                                   'english_sha256': digest('There, a name.')}])
     audit = tmp_path / 'audit.json'
@@ -63,7 +78,7 @@ def test_synthetic_book_cli(tmp_path):
     run('sheet-rows', input=trans, output=rows)
     canonical, = read_records(rows)
     assert canonical['editorial_english'] == 'An older draft'
-    assert canonical['google_translate'] == 'There name'
+    assert canonical['google_translate'] == ('There name' if google else '')
     assert canonical['english'] == 'There, a name.'
     assert canonical['contextual_notes'] == ['Locative.', 'Noun.']
     assert canonical['transliteration']

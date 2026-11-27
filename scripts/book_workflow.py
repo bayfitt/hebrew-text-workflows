@@ -44,6 +44,8 @@ def plan(manifest, source):
     require(re.fullmatch(r'[a-z0-9][a-z0-9-]*', manifest['book_id']), 'Invalid book ID')
     require(nonblank(manifest.get('source_edition')) and nonblank(manifest.get('source_revision')),
             'Pin source edition and revision')
+    mode = manifest.get('translation_mode', 'source-first')
+    require(mode in {'source-first', 'google-comparison'}, 'Invalid translation mode')
     require(source and manifest['source_sha256'] == pin(source), 'Source snapshot pin mismatch or empty source')
     records = []
     refs = set()
@@ -59,7 +61,9 @@ def plan(manifest, source):
                         'id': manifest['book_id'] + '-' + pin(ref)[:24],
                         'source_sha256': digest(text), 'source_edition': manifest['source_edition'],
                         'source_revision': manifest['source_revision'], 'sheet_row': index,
-                        'google_formula': f'=GOOGLETRANSLATE(B{index},"he","en")'})
+                        'translation_mode': mode})
+        if mode == 'google-comparison':
+            records[-1]['google_formula'] = f'=GOOGLETRANSLATE(B{index},"he","en")'
     return records
 
 
@@ -71,11 +75,23 @@ def align(rows, observed, label):
         yield row, actual
 
 
-def english(rows, live, frozen, edits):
+def english(rows, edits):
+    require(rows, 'Empty English checkpoint')
+    output = []
+    for row, decision in align(rows, edits, 'English review'):
+        require(nonblank(decision.get('english')) and nonblank(decision.get('english_note')),
+                'English decision missing')
+        output.append({**row, 'english': decision['english'], 'english_note': decision['english_note']})
+    return output
+
+
+def compare_google(rows, live, frozen, notes):
+    require(rows and all(row.get('translation_mode') == 'google-comparison' for row in rows),
+            'Google evidence is accepted only in explicit google-comparison mode')
     output = []
     for (row, a), (_, b), (_, decision) in zip(
             align(rows, live, 'live formula'), align(rows, frozen, 'frozen value'),
-            align(rows, edits, 'English review'), strict=True):
+            align(rows, notes, 'comparison notes'), strict=True):
         require(a.get('source_text') == b.get('source_text') == row['source_text'],
                 'Formula or frozen readback Hebrew differs')
         value = a.get('value')
@@ -83,10 +99,12 @@ def english(rows, live, frozen, edits):
                 and value not in FORMULA_ERRORS and not value.lstrip().startswith('=')
                 and value.strip().casefold() not in {'loading...', 'loading…'}, 'Missing successful live Google formula/value')
         require(b.get('formula') is None and b.get('value') == value, 'Frozen Google cell differs or is still a formula')
-        require(decision.get('google_sha256') == digest(value) and nonblank(decision.get('english'))
-                and nonblank(decision.get('english_note')), 'English decision missing or stale')
-        output.append({**row, 'google_translate': value, 'english': decision['english'],
-                       'english_note': decision['english_note']})
+        comparison_note = decision.get('google_comparison_note')
+        require(nonblank(row.get('english')) and nonblank(row.get('english_note'))
+                and decision.get('english_sha256') == digest(row['english'])
+                and decision.get('google_sha256') == digest(value) and nonblank(comparison_note),
+                'Independent English or comparison evidence missing or stale')
+        output.append({**row, 'google_translate': value, 'google_comparison_note': comparison_note})
     return output
 
 
@@ -114,11 +132,14 @@ def point(rows, drafts, decisions, require_resolved):
 def sheet_rows(rows):
     fields = ('id', 'source_sha256', 'source_ref', 'source_edition', 'source_revision',
               'source_text', 'source_kind', 'ocr_evidence',
-              'google_translate', 'editorial_english', 'english', 'english_note', 'expanded_text',
+              'translation_mode', 'google_translate', 'google_comparison_note', 'editorial_english', 'english', 'english_note', 'expanded_text',
               'expansion_note', 'vocalized_text', 'niqqud_note', 'contextual_notes', 'transliteration',
               'transliteration_engine', 'transliteration_schema_sha256',
               'transliteration_library_sha256', 'transliteration_wrapper_sha256')
     for row in rows:
+        require(row.get('translation_mode') != 'google-comparison' or
+                (nonblank(row.get('google_translate')) and nonblank(row.get('google_comparison_note'))),
+                'Google comparison mode requires a verified comparison before upload')
         require(row.get('transliteration_status') == 'draft' and nonblank(row.get('transliteration'))
                 and not row.get('transliteration_flags')
                 and row.get('transliteration_input_sha256') == digest(row['vocalized_text']),
@@ -132,7 +153,8 @@ def main():
     for name, flags in {
         'pin-source': ('source',),
         'plan': ('manifest', 'source', 'output'),
-        'english': ('input', 'live', 'frozen', 'edits', 'output'),
+        'english': ('input', 'edits', 'output'),
+        'compare-google': ('input', 'live', 'frozen', 'notes', 'output'),
         'niqqud-audit': ('input', 'drafts', 'output'),
         'niqqud': ('input', 'drafts', 'decisions', 'output'),
         'transliterate': ('input', 'cache', 'output'),
@@ -145,13 +167,16 @@ def main():
     a = cli.parse_args()
     try:
         if hasattr(a, 'output'):
-            separate_output(a.output, *(v for k, v in vars(a).items() if k not in {'output', 'stage', 'cache'}))
+            separate_output(a.output, *(v for k, v in vars(a).items() if v is not None and k not in {'output', 'stage', 'cache'}))
         if a.stage == 'pin-source':
             print(pin(unindexed(a.source)))
         elif a.stage == 'plan':
             write_records(a.output, plan(json.loads(Path(a.manifest).read_text()), unindexed(a.source)))
         elif a.stage == 'english':
-            write_records(a.output, english(*(read_records(getattr(a, k)) for k in ('input', 'live', 'frozen', 'edits'))))
+            write_records(a.output, english(read_records(a.input), read_records(a.edits)))
+        elif a.stage == 'compare-google':
+            write_records(a.output, compare_google(*(read_records(getattr(a, k))
+                                                      for k in ('input', 'live', 'frozen', 'notes'))))
         elif a.stage.startswith('niqqud'):
             final = a.stage == 'niqqud'
             rows, audit = point(read_records(a.input), read_records(a.drafts),
