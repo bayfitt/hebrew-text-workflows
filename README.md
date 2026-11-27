@@ -29,7 +29,7 @@ python3 scripts/run_workflow.py --config examples/document.json --stage local-oc
 python3 scripts/run_workflow.py --config examples/document.json --stage local-ocr
 ```
 
-The other stage names are google-ocr, compare, prepare, vocalize, readings, transliterate, template, sheets and english. Save image-checked canonical text before prepare, reviewed occurrence decisions before readings, native destination metadata before sheets and current English review snapshots before english. The direct commands below expose each stage independently.
+The other stage names are google-ocr, compare, prepare, vocalize, niqqud-review, readings, transliterate, template, sheets and english. Save image-checked canonical text before prepare, reviewed occurrence decisions before readings, native destination metadata before sheets and current English review snapshots before english. The direct commands below expose each stage independently.
 
 For a scanned PDF, local OCR uses Poppler and Tesseract with Hebrew language data. Two-up page layouts also require Pillow. Configure `--layout single` or `--layout two_up` for the supplied PDF. Source page numbers and bounding boxes are retained in the record metadata.
 
@@ -57,6 +57,21 @@ The vocalizer retains original characters and existing marks, adds compatible dr
 Install the skill directory at your Codex skills location or invoke its instructions from this checkout. The agent reviews complete source contexts and the pronunciation profile. The dictionary supplies reviewed familiar forms and evidence. Each applied decision must bind to the current source hash and exact occurrence span.
 
 The decision contract supports phrase expansion, retained familiar acronyms with `spoken_reading`, optional `english_label` and explicit manual review. The helper records the reading policy and dictionary hash. A changed policy invalidates prior policy-bound decisions. Its pronunciation input omits abbreviation marks only in reviewed spoken-acronym spans. Ordinary quotation punctuation and recorded silent-letter behavior are preserved. Literal or numeric homographs use an explicit `usage` value. A phrase meaning that differs from the profile requires a documented `contextual_alternative`, reason and evidence.
+
+### Contextual niqqud review
+
+The draft is not authoritative for homographs. Use the `niqqud-review` stage to
+produce a contextual queue for שם, including common attached prefixes. Read the
+full clause and surrounding passage; distinguish “there” (שָׁם), “name”
+(שֵׁם), “put/set” (שָׂם), and cases you cannot resolve. No reading is inferred
+from the letters, position, or default draft. Copy `id`, `occurrence`, `token`,
+`draft_sha256`, and `source_sha256` from each report entry into the JSONL
+decisions file, adding `sense` (`there`, `name`, `set`, or `uncertain`) and a
+nonempty string `reason`. After a bulk draft changes, review against the new
+text rather than replaying old decisions. Setting `niqqud_context_decisions`
+in a document config makes the `readings` stage run this gate before it runs
+the abbreviation pass. The gate blocks unresolved decisions, preserves
+consonants and unrelated marks, and never overwrites input.
 
 Prepare work/reading-decisions.jsonl using the review agent. Every production decision includes the selected dictionary's exact hash and reading policy version. The dictionary-bound entrypoint validates the selected spoken form and English label before applying the occurrence. Its output feeds Charles through `transliteration_input`.
 

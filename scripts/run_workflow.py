@@ -10,7 +10,7 @@ from workflow_io import digest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STAGES = ['local-ocr', 'google-ocr', 'compare', 'prepare', 'vocalize', 'readings',
+STAGES = ['local-ocr', 'google-ocr', 'compare', 'prepare', 'vocalize', 'niqqud-review', 'readings',
           'transliterate', 'template', 'sheets', 'english']
 
 
@@ -39,6 +39,18 @@ def stage_command(config, config_directory, stage):
                      '--decisions', path('english_name_decisions'), '--output', str(output / 'english-reviewed.jsonl'),
                      '--archive', str(output / 'english-overrides-archive.json')],
     }
+    if stage == 'niqqud-review' or (stage == 'readings' and config.get('niqqud_context_decisions')):
+        command = [python, script('review_niqqud.py'), '--input', str(output / 'vocalized.jsonl'),
+                   '--report', str(output / 'niqqud-context-report.json')]
+        if stage == 'niqqud-review':
+            return command
+        reviewed = str(output / 'vocalized-context-reviewed.jsonl')
+        command.extend(['--decisions', path('niqqud_context_decisions'), '--output', reviewed,
+                        '--require-resolved'])
+        reading_command = commands['readings']
+        reading_command[reading_command.index('--records') + 1] = reviewed
+        # Dispatcher runs the guard before the consumer, eliminating stale cached review reuse.
+        return [command, reading_command]
     if stage in ['local-ocr', 'google-ocr']:
         command = [python, script('ocr_pdf.py' if stage == 'local-ocr' else 'google_vision_ocr.py'),
                    '--pdf', path('input_pdf'), '--pages', pdf.get('pages', 'all'),
@@ -66,7 +78,8 @@ def main():
     if args.dry_run:
         print(json.dumps({'stage': args.stage, 'command': command}))
         return
-    subprocess.run(command, check=True)
+    for step in command if isinstance(command[0], list) else [command]:
+        subprocess.run(step, check=True)
 
 
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { createHash } from 'node:crypto';
 import assert from 'node:assert/strict';
 import { mkdtempSync, readFileSync, writeFileSync, readdirSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -15,6 +16,8 @@ const samples = new Map([
   ['רַשִׁי', 'rashi'],
   ['טַז', 'ṭaz'],
   ['שַׁךְ', 'shach'],
+  ['שָׁם', 'shom'],
+  ['שֵׁם', 'shēm'],
 ]);
 for (const [source, expected] of samples) {
   assert.equal(engine.run(source), expected);
@@ -39,6 +42,18 @@ try {
   const result = JSON.parse(readFileSync(output, 'utf8'));
   assert.equal(result.transliteration, 'rambam');
   assert.equal(result.transliteration_status, 'draft');
+  const strict = ['--input', input, '--output', output, '--schema', schema, '--cache', cache, '--require-context-review'];
+  await assert.rejects(main(strict), /Missing, unresolved or stale/);
+  record.niqqud_context_review = { policy: 'contextual-shm-v1', unresolved: 1,
+    reviewed_sha256: createHash('sha256').update(record.transliteration_input).digest('hex') };
+  writeFileSync(input, JSON.stringify(record));
+  await assert.rejects(main(strict), /Missing, unresolved or stale/);
+  record.niqqud_context_review.unresolved = 0;
+  writeFileSync(input, JSON.stringify(record));
+  assert.equal(await main(strict), 0);
+  record.niqqud_context_review.reviewed_sha256 = 'wrong';
+  writeFileSync(input, JSON.stringify(record));
+  await assert.rejects(main(strict), /Missing, unresolved or stale/);
   assert.equal(result.transliteration_flags.includes('unresolved_acronym_or_abbreviation_reading'), false);
   record.reading_policy_version = 'second';
   writeFileSync(input, JSON.stringify(record));

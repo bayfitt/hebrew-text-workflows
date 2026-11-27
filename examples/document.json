@@ -10,6 +10,7 @@
   "max_source_chars": 350,
   "dictionary": "../profiles/spoken-readings.json",
   "schema": "../profiles/charles-schema.json",
+  "niqqud_context_decisions": "../work/document/niqqud-context-decisions.jsonl",
   "reading_decisions": "../work/document/reading-decisions.jsonl",
   "sheet_metadata": "../work/document/sheet-metadata.json",
   "english_snapshot": "../work/document/english-snapshot.jsonl",

@@ -70,6 +70,7 @@ function parseArgs(argv) {
   const args = { field: null, schema: join(ROOT, 'profiles/charles-schema.json'), cache: join(ROOT, 'work/transliteration/cache/charles') };
   for (let i = 0; i < argv.length; i++) {
     const key = argv[i];
+    if (key === '--require-context-review') { args.requireContextReview = true; continue; }
     if (key === '--help' || key === '-h') { args.help = true; continue; }
     if (!['--input', '--output', '--schema', '--field', '--cache', '--limit'].includes(key) || !argv[i + 1]) throw new Error(`Unknown or missing argument: ${key}`);
     args[key.slice(2)] = argv[++i];
@@ -99,6 +100,11 @@ export async function main(argv = process.argv.slice(2)) {
   for (const record of records) {
     const inputField = args.field ?? (typeof record.transliteration_input === 'string' ? 'transliteration_input' : 'vocalized_text');
     const text = record[inputField];
+    const review = record.niqqud_context_review;
+    if (args.requireContextReview && (
+      review?.policy !== 'contextual-shm-v1' || review.unresolved !== 0 ||
+      typeof text !== 'string' || review.reviewed_sha256 !== sha256(text)
+    )) throw new Error(`Missing, unresolved or stale niqqud context review: ${record.id}`);
     let result;
     if (typeof text !== 'string') {
       result = { transliteration: '', transliteration_status: 'error', transliteration_error: `Missing string field: ${inputField}` };
